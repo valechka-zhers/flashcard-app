@@ -3,7 +3,7 @@ export default function AuthScreen({ onSignIn }) {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-900 dark:to-indigo-950 px-4">
       <div className="text-center max-w-sm w-full">
         <div className="text-6xl mb-6">🃏</div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Flashcards</h1>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Flipo</h1>
         <p className="text-gray-500 dark:text-gray-400 mb-10 text-lg">
           Учи что угодно с помощью карточек. Данные синхронизируются на всех устройствах.
         </p>

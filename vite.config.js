@@ -9,9 +9,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
-        name: 'Flashcards',
-        short_name: 'Flashcards',
-        description: 'Learn anything with flashcards',
+        name: 'Flipo',
+        short_name: 'Flipo',
+        description: 'Learn anything with Flipo flashcards',
         theme_color: '#6366f1',
         background_color: '#ffffff',
         display: 'standalone',

@@ -7,7 +7,7 @@ export default function DeckList({ decks, user, onStudy, onEdit, onCreateNew, on
       <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🃏</span>
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white">Flashcards</h1>
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">Flipo</h1>
         </div>
         <div className="flex items-center gap-3">
           {user?.photoURL && (
