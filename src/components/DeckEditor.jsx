@@ -9,13 +9,13 @@ function CardRow({ card, index, onChange, onDelete }) {
           placeholder="Слово / вопрос"
           value={card.front}
           onChange={e => onChange({ ...card, front: e.target.value })}
-          className="flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-flipo-blue"
         />
         <input
           placeholder="Перевод / ответ"
           value={card.back}
           onChange={e => onChange({ ...card, back: e.target.value })}
-          className="flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="flex-1 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-flipo-blue"
         />
       </div>
       <button
@@ -69,7 +69,7 @@ export default function DeckEditor({ deck, onSave, onCancel, onDelete }) {
         <button
           onClick={handleSave}
           disabled={saving || !name.trim()}
-          className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white font-semibold px-4 py-2 rounded-xl transition-colors text-sm"
+          className="bg-flipo-blue hover:bg-flipo-blue-h disabled:opacity-40 text-white font-semibold px-4 py-2 rounded-xl transition-colors text-sm"
         >
           {saving ? '...' : 'Сохранить'}
         </button>
@@ -85,7 +85,7 @@ export default function DeckEditor({ deck, onSave, onCancel, onDelete }) {
             value={name}
             onChange={e => setName(e.target.value)}
             placeholder="Например: Испанский — числа"
-            className="w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white text-base focus:outline-none focus:ring-2 focus:ring-flipo-blue"
           />
         </div>
 

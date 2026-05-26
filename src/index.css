@@ -4,6 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-flipo-hero {
+    background: linear-gradient(135deg, #1A1EEF 0%, #7B26EF 55%, #C040C0 100%);
+  }
+  .bg-flipo-accent {
+    background: linear-gradient(135deg, #C868FF 0%, #FF5EC8 100%);
+  }
+  .bg-flipo-card-back {
+    background: linear-gradient(135deg, #1A1060 0%, #2B0D5A 100%);
+  }
+  .text-flipo-accent {
+    background: linear-gradient(135deg, #C868FF, #FF5EC8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
 }

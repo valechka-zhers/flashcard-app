@@ -1,15 +1,15 @@
 export default function AuthScreen({ onSignIn }) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-900 dark:to-indigo-950 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-flipo-hero px-4">
       <div className="text-center max-w-sm w-full">
         <div className="text-6xl mb-6">🃏</div>
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Flipo</h1>
-        <p className="text-gray-500 dark:text-gray-400 mb-10 text-lg">
+        <h1 className="text-4xl font-bold text-white mb-3">Flipo</h1>
+        <p className="text-white/60 mb-10 text-lg">
           Учи что угодно с помощью карточек. Данные синхронизируются на всех устройствах.
         </p>
         <button
           onClick={onSignIn}
-          className="w-full flex items-center justify-center gap-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl py-4 px-6 shadow-sm hover:shadow-md transition-all duration-200 text-gray-700 dark:text-gray-200 font-medium text-lg"
+          className="w-full flex items-center justify-center gap-3 bg-flipo-navy/80 backdrop-blur border border-white/10 rounded-2xl py-4 px-6 shadow-lg hover:bg-flipo-navy transition-all duration-200 text-white font-medium text-lg"
         >
           <svg className="w-6 h-6" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

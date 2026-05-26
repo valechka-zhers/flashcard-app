@@ -35,17 +35,17 @@ export default function FlashCard({ card, onKnow, onDontKnow }) {
       >
         <div className={`card-flip-inner ${flipped ? 'flipped' : ''}`}>
           {/* Front */}
-          <div className="card-face flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 p-8">
-            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-4">Вопрос</span>
-            <p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white text-center leading-snug">
+          <div className="card-face flex flex-col items-center justify-center bg-white dark:bg-flipo-navy-2 rounded-3xl shadow-xl border border-flipo-silver dark:border-white/5 p-8">
+            <span className="text-xs font-semibold uppercase tracking-widest text-flipo-blue/60 mb-4">Вопрос</span>
+            <p className="text-2xl md:text-3xl font-bold text-flipo-navy dark:text-white text-center leading-snug">
               {card.front}
             </p>
-            <span className="mt-6 text-sm text-gray-400">нажми, чтобы перевернуть</span>
+            <span className="mt-6 text-sm text-flipo-navy/30 dark:text-white/30">нажми, чтобы перевернуть</span>
           </div>
           {/* Back */}
-          <div className="card-face card-face-back flex flex-col items-center justify-center bg-indigo-50 dark:bg-indigo-950 rounded-3xl shadow-xl border border-indigo-100 dark:border-indigo-800 p-8">
-            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-4">Ответ</span>
-            <p className="text-2xl md:text-3xl font-bold text-indigo-700 dark:text-indigo-200 text-center leading-snug">
+          <div className="card-face card-face-back flex flex-col items-center justify-center bg-flipo-card-back rounded-3xl shadow-xl border border-white/5 p-8">
+            <span className="text-xs font-semibold uppercase tracking-widest text-flipo-pink-p/70 mb-4">Ответ</span>
+            <p className="text-2xl md:text-3xl font-bold text-white text-center leading-snug">
               {card.back}
             </p>
           </div>
@@ -54,17 +54,17 @@ export default function FlashCard({ card, onKnow, onDontKnow }) {
         {/* Green overlay */}
         <motion.div
           style={{ opacity: greenOpacity }}
-          className="absolute inset-0 rounded-3xl bg-green-400/30 border-4 border-green-400 pointer-events-none flex items-center justify-start pl-6"
+          className="absolute inset-0 rounded-3xl bg-flipo-blue/20 border-4 border-flipo-blue pointer-events-none flex items-center justify-start pl-6"
         >
-          <span className="text-green-600 dark:text-green-300 font-bold text-xl">✓ Знаю</span>
+          <span className="text-flipo-blue font-bold text-xl">✓ Знаю</span>
         </motion.div>
 
         {/* Red overlay */}
         <motion.div
           style={{ opacity: redOpacity }}
-          className="absolute inset-0 rounded-3xl bg-red-400/30 border-4 border-red-400 pointer-events-none flex items-center justify-end pr-6"
+          className="absolute inset-0 rounded-3xl bg-flipo-pink/20 border-4 border-flipo-pink pointer-events-none flex items-center justify-end pr-6"
         >
-          <span className="text-red-600 dark:text-red-300 font-bold text-xl">✗ Не знаю</span>
+          <span className="text-flipo-pink font-bold text-xl">✗ Не знаю</span>
         </motion.div>
       </div>
     </motion.div>

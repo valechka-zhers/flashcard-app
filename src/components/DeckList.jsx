@@ -2,20 +2,20 @@ import DeckCard from './DeckCard'
 
 export default function DeckList({ decks, user, onStudy, onEdit, onCreateNew, onLogOut }) {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-flipo-off-white dark:bg-flipo-navy">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-4 flex items-center justify-between">
+      <div className="bg-flipo-navy border-b border-white/5 px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🃏</span>
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white">Flipo</h1>
+          <h1 className="text-xl font-bold text-white">Flipo</h1>
         </div>
         <div className="flex items-center gap-3">
           {user?.photoURL && (
-            <img src={user.photoURL} alt="avatar" className="w-8 h-8 rounded-full" />
+            <img src={user.photoURL} alt="avatar" className="w-8 h-8 rounded-full ring-2 ring-flipo-blue/40" />
           )}
           <button
             onClick={onLogOut}
-            className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+            className="text-sm text-white/40 hover:text-white/70 transition-colors"
           >
             Выйти
           </button>
@@ -26,17 +26,17 @@ export default function DeckList({ decks, user, onStudy, onEdit, onCreateNew, on
         {/* Create button */}
         <button
           onClick={onCreateNew}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 rounded-2xl transition-colors mb-6 text-base"
+          className="w-full bg-flipo-blue hover:bg-flipo-blue-h text-white font-semibold py-4 rounded-2xl transition-colors mb-6 text-base shadow-lg shadow-flipo-blue/20"
         >
           + Создать новую колоду
         </button>
 
         {/* Empty state */}
         {decks.length === 0 ? (
-          <div className="text-center py-16 text-gray-400 dark:text-gray-600">
+          <div className="text-center py-16 text-flipo-navy/30 dark:text-white/20">
             <div className="text-5xl mb-4">📚</div>
-            <p className="text-lg font-medium">Пока нет колод</p>
-            <p className="text-sm mt-1">Создай первую и начни учиться!</p>
+            <p className="text-lg font-medium text-flipo-navy/50 dark:text-white/40">Пока нет колод</p>
+            <p className="text-sm mt-1 text-flipo-navy/40 dark:text-white/30">Создай первую и начни учиться!</p>
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2">

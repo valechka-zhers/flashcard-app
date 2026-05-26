@@ -19,23 +19,23 @@ export default function StudySession({ deck, markCardLearned, resetDeckProgress,
   const remaining = total - learnedCount
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-flipo-off-white dark:bg-flipo-navy">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-        <button onClick={onHome} className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
+      <div className="flex items-center justify-between px-4 py-4 border-b border-flipo-silver dark:border-white/5 bg-white dark:bg-flipo-navy">
+        <button onClick={onHome} className="text-flipo-navy/50 hover:text-flipo-blue dark:text-white/40 dark:hover:text-white transition-colors">
           ← Назад
         </button>
-        <h1 className="font-semibold text-gray-900 dark:text-white truncate mx-4 text-sm">{deck.name}</h1>
-        <span className="text-sm text-gray-500">{learnedCount}/{total}</span>
+        <h1 className="font-semibold text-flipo-navy dark:text-white truncate mx-4 text-sm">{deck.name}</h1>
+        <span className="text-sm text-flipo-blue font-semibold">{learnedCount}/{total}</span>
       </div>
 
       {/* Progress */}
-      <div className="px-4 py-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <div className="px-4 py-3 bg-white dark:bg-flipo-navy border-b border-flipo-silver dark:border-white/5">
         <ProgressBar current={learnedCount} total={total} />
-        <div className="flex justify-between mt-2 text-xs text-gray-500 dark:text-gray-400">
-          <span>Всего: {total}</span>
-          <span className="text-green-600 dark:text-green-400">Выучено: {learnedCount}</span>
-          <span className="text-indigo-600 dark:text-indigo-400">Осталось: {remaining}</span>
+        <div className="flex justify-between mt-2 text-xs">
+          <span className="text-flipo-navy/40 dark:text-white/40">Всего: {total}</span>
+          <span className="text-flipo-pink-p font-medium">Выучено: {learnedCount}</span>
+          <span className="text-flipo-blue font-medium">Осталось: {remaining}</span>
         </div>
       </div>
 
@@ -61,13 +61,13 @@ export default function StudySession({ deck, markCardLearned, resetDeckProgress,
       <div className="px-4 pb-8 flex gap-4 max-w-lg mx-auto w-full">
         <button
           onClick={handleDontKnow}
-          className="flex-1 bg-red-100 dark:bg-red-950 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 font-semibold py-4 rounded-2xl text-lg hover:bg-red-200 dark:hover:bg-red-900 transition-colors"
+          className="flex-1 bg-flipo-pink/10 border border-flipo-pink/30 text-flipo-pink font-semibold py-4 rounded-2xl text-lg hover:bg-flipo-pink/20 transition-colors"
         >
           ← Не знаю
         </button>
         <button
           onClick={handleKnow}
-          className="flex-1 bg-green-100 dark:bg-green-950 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 font-semibold py-4 rounded-2xl text-lg hover:bg-green-200 dark:hover:bg-green-900 transition-colors"
+          className="flex-1 bg-flipo-blue/10 border border-flipo-blue/30 text-flipo-blue font-semibold py-4 rounded-2xl text-lg hover:bg-flipo-blue/20 transition-colors"
         >
           Знаю →
         </button>
