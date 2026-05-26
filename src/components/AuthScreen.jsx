@@ -1,4 +1,24 @@
+import { useState } from 'react'
+
 export default function AuthScreen({ onSignIn }) {
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleSignIn = async () => {
+    try {
+      setError(false)
+      setLoading(true)
+      await onSignIn()
+    } catch (e) {
+      const ignored = ['auth/popup-closed-by-user', 'auth/cancelled-popup-request']
+      if (!ignored.includes(e?.code)) {
+        setError(true)
+      }
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-flipo-hero px-4">
       <div className="text-center max-w-sm w-full">
@@ -7,9 +27,15 @@ export default function AuthScreen({ onSignIn }) {
         <p className="text-white/60 mb-10 text-lg">
           Учи что угодно с помощью карточек. Данные синхронизируются на всех устройствах.
         </p>
+        {error && (
+          <p className="text-flipo-pink text-sm mb-4 bg-white/5 rounded-xl py-2 px-4">
+            Не удалось войти. Попробуй ещё раз.
+          </p>
+        )}
         <button
-          onClick={onSignIn}
-          className="w-full flex items-center justify-center gap-3 bg-flipo-navy/80 backdrop-blur border border-white/10 rounded-2xl py-4 px-6 shadow-lg hover:bg-flipo-navy transition-all duration-200 text-white font-medium text-lg"
+          onClick={handleSignIn}
+          disabled={loading}
+          className="w-full flex items-center justify-center gap-3 bg-flipo-navy/80 backdrop-blur border border-white/10 rounded-2xl py-4 px-6 shadow-lg hover:bg-flipo-navy disabled:opacity-60 transition-all duration-200 text-white font-medium text-lg"
         >
           <svg className="w-6 h-6" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

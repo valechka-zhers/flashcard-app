@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
-  collection, doc, addDoc, updateDoc, deleteDoc,
-  onSnapshot, serverTimestamp, writeBatch, getDocs
+  collection, doc, addDoc, updateDoc,
+  onSnapshot, serverTimestamp, writeBatch, getDocs, increment
 } from 'firebase/firestore'
 import { db } from '../firebase'
 
@@ -74,7 +74,7 @@ export function useDecks(userId) {
     const cardRef = doc(db, 'users', userId, 'decks', deckId, 'cards', cardId)
     await updateDoc(cardRef, {
       isLearned: learned,
-      [learned ? 'timesCorrect' : 'timesIncorrect']: (learned ? 1 : 1),
+      [learned ? 'timesCorrect' : 'timesIncorrect']: increment(1),
     })
   }
 

@@ -35,6 +35,7 @@ export default function DeckEditor({ deck, onSave, onCancel, onDelete }) {
     deck?.cards?.length ? deck.cards.map(c => ({ front: c.front, back: c.back, isLearned: c.isLearned, timesCorrect: c.timesCorrect, timesIncorrect: c.timesIncorrect })) : [{ front: '', back: '' }]
   )
   const [saving, setSaving] = useState(false)
+  const [confirmDelete, setConfirmDelete] = useState(false)
 
   const addCard = () => setCards(prev => [...prev, { front: '', back: '' }])
 
@@ -116,12 +117,30 @@ export default function DeckEditor({ deck, onSave, onCancel, onDelete }) {
         {/* Delete deck */}
         {isEditing && (
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <button
-              onClick={onDelete}
-              className="text-red-500 hover:text-red-700 text-sm font-medium transition-colors"
-            >
-              Удалить колоду
-            </button>
+            {confirmDelete ? (
+              <div className="flex items-center gap-4">
+                <span className="text-sm text-gray-600 dark:text-gray-400">Удалить навсегда?</span>
+                <button
+                  onClick={onDelete}
+                  className="text-red-500 hover:text-red-700 text-sm font-semibold transition-colors"
+                >
+                  Да, удалить
+                </button>
+                <button
+                  onClick={() => setConfirmDelete(false)}
+                  className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-sm transition-colors"
+                >
+                  Отмена
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setConfirmDelete(true)}
+                className="text-red-500 hover:text-red-700 text-sm font-medium transition-colors"
+              >
+                Удалить колоду
+              </button>
+            )}
           </div>
         )}
       </div>

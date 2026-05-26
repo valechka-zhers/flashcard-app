@@ -17,12 +17,10 @@ export function useStudySession(deck, markCardLearned) {
     if (!current) return
     await markCardLearned(deck.id, current.id, true)
     setLearnedIds(prev => new Set([...prev, current.id]))
-    setQueue(prev => {
-      const next = prev.slice(1)
-      if (next.length === 0) setDone(true)
-      return next
-    })
-  }, [current, deck, markCardLearned])
+    const nextQueue = queue.slice(1)
+    setQueue(nextQueue)
+    if (nextQueue.length === 0) setDone(true)
+  }, [current, queue, deck, markCardLearned])
 
   const handleDontKnow = useCallback(async () => {
     if (!current) return
